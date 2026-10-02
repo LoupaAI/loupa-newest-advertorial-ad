@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://app.loupa.ai/loupa-favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://app.loupa.ai/loupa-favicon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://app.loupa.ai/loupa-favicon.png">
+    <meta property="og:image:secure_url" content="https://app.loupa.ai/loupa-favicon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://app.loupa.ai/loupa-favicon.png">
+<!-- LOUPA_CONSENT_START -->
+<style data-loupa-cc>
+#loupa-cc,#loupa-cc *{box-sizing:border-box!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif!important;letter-spacing:normal!important;text-transform:none!important}
+#loupa-cc{position:fixed!important;z-index:2147483646!important;left:16px;right:16px;bottom:16px;max-width:560px;margin:0 auto;background:#fff!important;color:#111!important;border:1px solid #111!important;border-radius:12px!important;padding:18px!important;box-shadow:0 8px 30px rgba(0,0,0,.18)!important;font-size:14px!important;line-height:1.45!important;text-align:left!important}
+#loupa-cc h2{margin:0 0 6px!important;font-size:16px!important;font-weight:600!important;color:#111!important;line-height:1.3!important}
+#loupa-cc p{margin:0 0 14px!important;color:#333!important;font-size:13px!important}
+#loupa-cc .lcc-row{display:flex!important;flex-wrap:wrap!important;gap:8px!important}
+#loupa-cc button.lcc-btn{flex:1 1 140px!important;min-height:42px!important;padding:10px 14px!important;border-radius:8px!important;border:1px solid #111!important;font-size:14px!important;font-weight:600!important;cursor:pointer!important;background:#fff!important;color:#111!important;margin:0!important;box-shadow:none!important;text-decoration:none!important}
+#loupa-cc button.lcc-btn.lcc-dark{background:#111!important;color:#fff!important}
+#loupa-cc button.lcc-btn:focus-visible,#loupa-cc button.lcc-sw:focus-visible{outline:2px solid #111!important;outline-offset:2px!important}
+#loupa-cc .lcc-item{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;padding:12px 0!important;border-top:1px solid #e5e5e5!important}
+#loupa-cc .lcc-item strong{display:block!important;font-size:14px!important;color:#111!important}
+#loupa-cc .lcc-item span{display:block!important;font-size:12px!important;color:#555!important}
+#loupa-cc button.lcc-sw{flex:none!important;position:relative!important;width:44px!important;height:26px!important;border-radius:13px!important;border:1px solid #111!important;background:#fff!important;cursor:pointer!important;padding:0!important;margin:0!important}
+#loupa-cc button.lcc-sw::after{content:""!important;position:absolute!important;top:3px!important;left:3px!important;width:18px!important;height:18px!important;border-radius:50%!important;background:#111!important;transition:left .15s!important}
+#loupa-cc button.lcc-sw[aria-checked="true"]{background:#111!important}
+#loupa-cc button.lcc-sw[aria-checked="true"]::after{left:21px!important;background:#fff!important}
+#loupa-cc button.lcc-sw[disabled]{opacity:.55!important;cursor:not-allowed!important}
+#loupa-cc-overlay{position:fixed!important;inset:0!important;z-index:2147483645!important;background:rgba(0,0,0,.45)!important}
+#loupa-cc.lcc-modal{top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;max-height:calc(100vh - 32px)!important;overflow:auto!important}
+button[data-loupa-cookie-settings]{background:none!important;border:0!important;padding:0!important;margin:0!important;font:inherit!important;color:inherit!important;opacity:.75;cursor:pointer!important;text-decoration:none}
+button[data-loupa-cookie-settings]:hover{opacity:1;text-decoration:underline}
+</style>
+<script data-loupa-cc>
+(function(){
+  var SITE="b00a39c7-1194-4d7b-b4d2-7dca46807983", VERSION=1, KEY='loupa_consent_'+SITE;
+  var state=null, ran={analytics:false,marketing:false}, subs={analytics:[],marketing:[]};
+  try{var raw=JSON.parse(localStorage.getItem(KEY)||'null');if(raw&&raw.v===VERSION)state=raw;}catch(e){}
+  function allowed(c){return !!(state&&state[c]===true);}
+  function gtag(){window.dataLayer=window.dataLayer||[];window.dataLayer.push(arguments);}
+  function googleConsent(mode){
+    gtag('consent',mode,{analytics_storage:allowed('analytics')?'granted':'denied',ad_storage:allowed('marketing')?'granted':'denied',ad_user_data:allowed('marketing')?'granted':'denied',ad_personalization:allowed('marketing')?'granted':'denied'});
+    if(!allowed('marketing')){gtag('set','allow_google_signals',false);gtag('set','allow_ad_personalization_signals',false);}
+  }
+  googleConsent('default');
+  function activate(c){
+    if(!allowed(c)||ran[c])return; ran[c]=true;
+    if(c==='marketing')googleConsent('update');
+    var list=document.querySelectorAll('script[type="text/plain"][data-loupa-consent="'+c+'"]');
+    for(var i=0;i<list.length;i++){var old=list[i],s=document.createElement('script');
+      for(var j=0;j<old.attributes.length;j++){var a=old.attributes[j];if(a.name!=='type'&&a.name!=='data-loupa-consent')s.setAttribute(a.name,a.value);}
+      s.setAttribute('data-loupa-consent-ran',c);
+      if(!old.src)s.text=old.text;
+      old.parentNode.replaceChild(s,old);}
+    var fns=subs[c];for(var k=0;k<fns.length;k++){try{fns[k]();}catch(e){}}
+  }
+  function blockDispatch(c){
+    var noop=function(){};
+    if(c==='marketing'){
+      try{if(window.fbq){window.fbq('consent','revoke');}}catch(e){}
+      try{if(window.ttq&&window.ttq.revokeConsent)window.ttq.revokeConsent();}catch(e){}
+      ['fbq','_fbq','pintrk','ttq'].forEach(function(n){try{window[n]=noop;}catch(e){}});
+    }
+    if(c==='analytics'){try{localStorage.removeItem('loupa_vid');sessionStorage.removeItem('loupa_vid_s');}catch(e){}}
+    googleConsent('update');
+  }
+  function save(next){
+    var prev=state; state={v:VERSION,necessary:true,analytics:!!next.analytics,marketing:!!next.marketing,ts:new Date().toISOString()};
+    try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}
+    var withdrawn=prev&&((prev.analytics&&!state.analytics)||(prev.marketing&&!state.marketing));
+    if(withdrawn){
+      if(prev.analytics&&!state.analytics)blockDispatch('analytics');
+      if(prev.marketing&&!state.marketing)blockDispatch('marketing');
+      if(ran.analytics||ran.marketing){location.reload();return;}
+    }
+    activate('analytics');activate('marketing');
+  }
+  window.LoupaConsent={version:VERSION,allowed:allowed,
+    on:function(c,fn){if(!subs[c])return;subs[c].push(fn);if(ran[c]){try{fn();}catch(e){}}},
+    open:function(){openPrefs();}};
+
+  var box=null,overlay=null,lastFocus=null;
+  function close(){if(box){box.remove();box=null;}if(overlay){overlay.remove();overlay=null;}document.removeEventListener('keydown',onKey,true);if(lastFocus&&lastFocus.focus)try{lastFocus.focus();}catch(e){}}
+  function onKey(e){if(e.key==='Escape'&&box&&box.classList.contains('lcc-modal')){e.preventDefault();close();if(!state)showBanner();}
+    if(e.key==='Tab'&&box&&box.classList.contains('lcc-modal')){var f=box.querySelectorAll('button:not([disabled])');if(!f.length)return;var a=f[0],z=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}}}
+  function el(html){var d=document.createElement('div');d.id='loupa-cc';d.setAttribute('role','dialog');d.setAttribute('aria-labelledby','loupa-cc-t');d.innerHTML=html;return d;}
+  function showBanner(){
+    close();
+    box=el('<h2 id="loupa-cc-t">We value your privacy</h2><p>We use necessary cookies to run this store. With your permission we also use analytics and marketing cookies to understand visits and show relevant ads.</p><div class="lcc-row"><button type="button" class="lcc-btn lcc-dark" data-a="all">Accept All</button><button type="button" class="lcc-btn lcc-dark" data-a="none">Reject All</button><button type="button" class="lcc-btn" data-a="prefs">Manage Preferences</button></div>');
+    box.setAttribute('aria-modal','false');
+    box.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var a=b.getAttribute('data-a');
+      if(a==='all'){close();save({analytics:true,marketing:true});}else if(a==='none'){close();save({analytics:false,marketing:false});}else if(a==='prefs'){openPrefs();}});
+    document.body.appendChild(box);
+  }
+  function sw(id,label,desc,on,locked){return '<div class="lcc-item"><div><strong id="'+id+'-l">'+label+'</strong><span>'+desc+'</span></div><button type="button" class="lcc-sw" role="switch" aria-labelledby="'+id+'-l" data-c="'+id+'" aria-checked="'+(on?'true':'false')+'"'+(locked?' disabled':'')+'></button></div>';}
+  function openPrefs(){
+    var focusBefore=document.activeElement; close(); lastFocus=focusBefore;
+    overlay=document.createElement('div');overlay.id='loupa-cc-overlay';document.body.appendChild(overlay);
+    box=el('<h2 id="loupa-cc-t">Cookie preferences</h2><p>Choose which cookies this store may use. You can change this anytime via Cookie Settings in the footer.</p>'
+      +sw('necessary','Necessary','Required for the store, cart and checkout to work.',true,true)
+      +sw('analytics','Analytics','Helps us understand how visitors use this store.',allowed('analytics'),false)
+      +sw('marketing','Marketing','Used by advertising partners to measure and personalize ads.',allowed('marketing'),false)
+      +'<div class="lcc-row" style="margin-top:14px"><button type="button" class="lcc-btn" data-a="none">Reject All</button><button type="button" class="lcc-btn lcc-dark" data-a="save">Save preferences</button></div>');
+    box.classList.add('lcc-modal');box.setAttribute('aria-modal','true');
+    box.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+      if(b.classList.contains('lcc-sw')){if(!b.disabled)b.setAttribute('aria-checked',b.getAttribute('aria-checked')==='true'?'false':'true');return;}
+      var a=b.getAttribute('data-a');
+      if(a==='none'){close();save({analytics:false,marketing:false});}
+      if(a==='save'){var g=function(c){var s=box.querySelector('[data-c="'+c+'"]');return s&&s.getAttribute('aria-checked')==='true';};var n={analytics:g('analytics'),marketing:g('marketing')};close();save(n);}});
+    overlay.addEventListener('click',function(){close();if(!state)showBanner();});
+    document.body.appendChild(box);document.addEventListener('keydown',onKey,true);
+    var first=box.querySelector('button:not([disabled])');if(first)first.focus();
+  }
+  document.addEventListener('click',function(e){var t=e.target&&e.target.closest?e.target.closest('[data-loupa-cookie-settings]'):null;if(t){e.preventDefault();openPrefs();}},true);
+  function boot(){activate('analytics');activate('marketing');if(!state)showBanner();}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
+<!-- LOUPA_CONSENT_END -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Year I Stopped Dreading My Own Thanksgiving Table</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#DED2C2;
+    --secondary:#8C8760;
+    --heading:#2A2417;
+    --ink:#1f1b12;
+    --muted:#6b6452;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:#FFFFFF;
+    color:#1f1b12;
+    font-size:18px;
+    line-height:1.75;
+    margin:0;
+    padding-bottom:96px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{color:var(--heading);font-family:inherit;}
+  h1{font-size:clamp(1.85rem,4vw,2.65rem)!important;font-weight:800!important;line-height:1.15!important;}
+  h2{font-size:clamp(1.6rem,3vw,2.15rem)!important;font-weight:700!important;line-height:1.2!important;margin-bottom:18px!important;}
+  h3{font-size:clamp(1.3rem,2vw,1.5rem)!important;font-weight:700!important;line-height:1.25!important;margin-bottom:12px!important;}
+  p{margin-bottom:1.4em!important;}
+  a{color:inherit;}
+  .wrap{max-width:680px;margin-left:auto;margin-right:auto;padding-left:20px;padding-right:20px;}
+  .wide{max-width:920px;margin-left:auto;margin-right:auto;padding-left:20px;padding-right:20px;}
+  .eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:0.08em;color:var(--secondary);font-weight:600;}
+  .section{margin-top:64px;}
+  .scrollm{scroll-margin-top:24px;}
+  figure{margin:0;}
+  .imgbox{width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:16px;}
+  .imgbox img{width:100%;height:100%;object-fit:cover;display:block;}
+  .cap{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.5;}
+  .card{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:16px;padding:20px;}
+  .tint{background:var(--primary);border-radius:20px;padding:28px;}
+  .tint2{background:#f3efe8;border-radius:20px;padding:28px;}
+  .hair{height:1px;background:rgba(0,0,0,0.10);border:0;margin:0;}
+  .badge{width:40px;height:40px;aspect-ratio:1;border-radius:50%;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;background:var(--secondary);color:#fff;font-weight:700;font-size:15px;}
+  .chk{width:26px;height:26px;aspect-ratio:1;border-radius:50%;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;background:var(--secondary);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--secondary);color:#fff!important;font-weight:700;padding:16px 32px;border-radius:12px;text-decoration:none;box-shadow:0 4px 18px rgba(0,0,0,0.12);transition:transform .15s ease,background .15s ease;font-size:17px;}
+  .btn:hover{background:#726d4c;transform:translateY(-2px);}
+  .avatar{width:44px;height:44px;aspect-ratio:1;border-radius:50%;overflow:hidden;flex-shrink:0;}
+  .avatar img{width:100%;height:100%;object-fit:cover;}
+  .pull{font-style:italic;text-align:center;font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.4;color:var(--heading);font-weight:500;padding:28px 0;}
+  .pullwrap{border-top:1px solid rgba(0,0,0,0.12);border-bottom:1px solid rgba(0,0,0,0.12);margin:8px 0;}
+  .chip{display:inline-block;background:#fff;border:1px solid rgba(0,0,0,0.12);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--heading);}
+  .faq-q{width:100%;text-align:left;background:none;border:0;padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-weight:600;font-size:17px;color:var(--heading);}
+  .faq-a{padding:0 0 20px;color:#3a362b;display:none;}
+  .faq-a.open{display:block;}
+  .chev{transition:transform .2s ease;flex-shrink:0;}
+  .chev.open{transform:rotate(180deg);}
+  .toc-link{text-decoration:none;display:flex;gap:12px;align-items:baseline;padding:7px 0;}
+  .toc-link:hover .toc-t{text-decoration:underline;}
+  .toc-n{color:var(--secondary);font-weight:700;font-size:14px;flex-shrink:0;}
+  .toc-t{color:var(--heading);font-weight:500;font-size:15px;}
+  .sticky{position:fixed;bottom:0;left:0;right:0;z-index:50;background:#fff;border-top:1px solid rgba(0,0,0,0.12);box-shadow:0 -4px 20px rgba(0,0,0,0.07);}
+  .ctable{width:100%;border-collapse:collapse;}
+  .ctable th,.ctable td{padding:14px 14px;text-align:left;border-bottom:1px solid rgba(0,0,0,0.08);font-size:15px;vertical-align:top;}
+  .ctable th{font-weight:700;color:var(--heading);}
+  .wincol{background:var(--primary);}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+  @media (min-width:768px){
+    .toc-grid{columns:2;column-gap:40px;}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch;}
+    .voices{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    .offer-grid{display:flex;gap:32px;align-items:center;}
+    .offer-img{width:380px;flex-shrink:0;}
+  }
+  @media (max-width:767px){
+    .section{margin-top:46px;}
+    .tint,.tint2{padding:22px;}
+    .btn{width:100%;}
+  }
+</style>
+</head>
+<body>
+
+<!-- AD DISCLOSURE -->
+<div style="background:#f3efe8;border-bottom:1px solid rgba(0,0,0,0.08);">
+  <div class="wrap" style="padding-top:8px;padding-bottom:8px;">
+    <span style="font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);font-weight:600;">Advertisement</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="wrap" style="margin-top:36px;">
+  <p class="eyebrow" style="margin-bottom:14px;">Home &amp; Holiday · Real Stories</p>
+  <h1 style="margin-bottom:16px;">The Year I Stopped Dreading My Own Thanksgiving Table</h1>
+  <p style="font-size:20px;color:#3a362b;margin-bottom:22px!important;">For twelve years I hosted the whole family and quietly fell apart doing it. Then one November I tried planning it differently — and actually sat down to eat.</p>
+  <hr class="hair" style="margin-bottom:16px;">
+  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+    <div class="avatar">
+      <img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/newest-advertorial-ad/author-avatar_1790961441636.jpg" alt="Author Renée">
+    </div>
+    <div style="font-size:14px;color:var(--muted);line-height:1.4;">
+      <span style="color:var(--heading);font-weight:600;">Renée M.</span><br>
+      November 3, 2024 · 9 min read
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="wide section">
+  <figure>
+    <div class="imgbox" style="aspect-ratio:16/9;">
+      <img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/newest-advertorial-ad/hero_1790961441636.png" alt="A warm autumn kitchen the afternoon before a holiday dinner">
+    </div>
+    <figcaption class="cap">The kitchen two hours before guests arrive — the moment where it used to all go sideways for me.</figcaption>
+  </figure>
+</div>
+
+<!-- TOC -->
+<div class="wrap section">
+  <div class="tint2">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C8760" stroke-width="2" stroke-linecap="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      <span class="eyebrow">Contents</span>
+    </div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#before"><span class="toc-n">01</span><span class="toc-t">How bad it really got</span></a>
+      <a class="toc-link" href="#fails"><span class="toc-n">02</span><span class="toc-t">Everything I tried first</span></a>
+      <a class="toc-link" href="#turn"><span class="toc-n">03</span><span class="toc-t">The night I cried in the pantry</span></a>
+      <a class="toc-link" href="#discovery"><span class="toc-n">04</span><span class="toc-t">The thing that finally clicked</span></a>
+      <a class="toc-link" href="#how"><span class="toc-n">05</span><span class="toc-t">How the system actually works</span></a>
+      <a class="toc-link" href="#results"><span class="toc-n">06</span><span class="toc-t">Six weeks, step by step</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- HOOK -->
+<section id="before" class="wrap section scrollm">
+  <p class="eyebrow" style="margin-bottom:10px;">The before</p>
+  <h2>How bad it really got</h2>
+  <p>Last year, around 4 p.m. on Thanksgiving, I locked myself in the bathroom and sat on the edge of the tub for ninety seconds so nobody would see my face.</p>
+  <p>The turkey was fine. The house looked lovely. Fourteen people I love were laughing in my living room. And I was in there, shaking, because I'd been awake since 5 a.m., I hadn't eaten, and my husband had just asked — sweetly, genuinely — "What can I do to help?" two hours too late to matter.</p>
+  <p>That was the moment I realized the problem wasn't the cooking. I'm a decent cook. The problem was that for twelve years, every decision, every list, every "did we remember the cranberry sauce," every allergy, every seating argument, every thawing deadline lived in exactly one place: my head.</p>
+  <p>And nobody could see it. So nobody helped carry it.</p>
+</section>
+
+<!-- RECOGNITION LIST -->
+<section class="wrap section">
+  <div class="tint2">
+    <p class="eyebrow" style="margin-bottom:6px;">Sound familiar?</p>
+    <h3 style="margin-bottom:18px;">Maybe you know this too</h3>
+
+    <div style="display:flex;gap:14px;padding:14px 0;align-items:flex-start;">
+      <span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <p style="margin:0!important;">You start feeling the dread in early November — before a single invitation has even gone out.</p>
+    </div>
+    <hr class="hair">
+    <div style="display:flex;gap:14px;padding:14px 0;align-items:flex-start;">
+      <span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <p style="margin:0!important;">Everyone shows up, sits down, and genuinely has no idea how many hours it took to make "effortless" happen.</p>
+    </div>
+    <hr class="hair">
+    <div style="display:flex;gap:14px;padding:14px 0;align-items:flex-start;">
+      <span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <p style="margin:0!important;">You snap at the person you love most over something small, then feel guilty about it for the rest of the day.</p>
+    </div>
+    <hr class="hair">
+    <div style="display:flex;gap:14px;padding:14px 0;align-items:flex-start;">
+      <span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <p style="margin:0!important;">By the time dessert is served, you're too wrung out to enjoy a single bite of the day you built.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AGITATION -->
+<section class="wrap section">
+  <p class="eyebrow" style="margin-bottom:10px;">The real cost</p>
+  <h2>It was never about the food</h2>
+  <p>Here's the part I couldn't explain to anyone for years, because it sounded ungrateful: I was starting to resent the thing I used to love.</p>
+  <p>I wanted the holidays. I wanted the crowded table and the kids under the piano and my mother-in-law's terrible opinions about gravy. But I'd quietly turned into the family's unpaid event coordinator, and the role was eating the joy.</p>
+  <p>The mental load is invisible, so it compounds in silence. It's remembering that your sister-in-law went gluten-free in March. It's knowing the oven can only hold two things at once. It's tracking which cousin is bringing a plus-one and whether there's a chair for them.</p>
+  <p>None of that shows up in a photo. So the people around you see a nice dinner — and you see six weeks of carrying something alone.</p>
+  <figure class="section">
+    <div class="imgbox">
+      <img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/newest-advertorial-ad/load_1790961441636.png" alt="Late-night planning at a cluttered kitchen counter">
+    </div>
+    <figcaption class="cap">The planning that happens after everyone else is asleep — the part nobody sees.</figcaption>
+  </figure>
+</section>
+
+<!-- FAILED ATTEMPTS -->
+<section id="fails" class="wrap section scrollm">
+  <p class="eyebrow" style="margin-bottom:10px;">What I tried first</p>
+  <h2>Everything that didn't work</h2>
+  <p>I am not a woman who sits around. Over the years I threw everything I could find at this problem. None of it stuck, and now I understand why.</p>
+
+  <div style="display:flex;gap:16px;padding:18px 0;align-items:flex-start;">
+    <span class="badge">1</span>
+    <div>
+      <h3 style="margin-bottom:6px;">The free printable checklist</h3>
+      <p style="margin:0!important;">I downloaded about forty of them. They all assumed my holiday looked like the blogger's holiday — same guest count, same kitchen, same budget. By day three it was buried under junk mail.</p>
+    </div>
+  </div>
+  <hr class="hair">
+  <div style="display:flex;gap:16px;padding:18px 0;align-items:flex-start;">
+    <span class="badge">2</span>
+    <div>
+      <h3 style="margin-bottom:6px;">The "just delegate" advice</h3>
+      <p style="margin:0!important;">Everyone says delegate. But you can't delegate a list that only exists in your head at 11 p.m. Handing off tasks still required me to think of every task first — which is the actual work.</p>
+    </div>
+  </div>
+  <hr class="hair">
+  <div style="display:flex;gap:16px;padding:18px 0;align-items:flex-start;">
+    <span class="badge">3</span>
+    <div>
+      <h3 style="margin-bottom:6px;">The giant spreadsheet</h3>
+      <p style="margin:0!important;">I built one. It was beautiful for about a week. Then it lived on a laptop in another room while I was elbow-deep in stuffing, which is to say it helped no one.</p>
+    </div>
+  </div>
+  <hr class="hair">
+  <div style="display:flex;gap:16px;padding:18px 0;align-items:flex-start;">
+    <span class="badge">4</span>
+    <div>
+      <h3 style="margin-bottom:6px;">Just "doing it all earlier"</h3>
+      <p style="margin:0!important;">Starting earlier only meant being stressed for longer. Without a structure, more time just gave the worry more room to spread out.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TURNING POINT -->
+<section id="turn" class="wrap section scrollm">
+  <p class="eyebrow" style="margin-bottom:10px;">The low point</p>
+  <h2>The night I cried in the pantry</h2>
+  <p>Two days before last Christmas, I was standing in the pantry at midnight counting cans of broth and I just… stopped. Full tears. The quiet kind where you don't even make noise.</p>
+  <p>It wasn't about the broth. It was the realization that I had done this to myself again, and that I'd do it again next year, and the year after, because I didn't know another way to be the person who makes the holiday happen.</p>
+  <div class="pullwrap section">
+    <p class="pull">"I wasn't tired from the work. I was tired from being the only one who could see the work."</p>
+    <p style="text-align:center;font-size:14px;color:var(--muted);margin-top:-8px!important;">— my journal, the next morning</p>
+  </div>
+</section>
+
+<!-- DISCOVERY -->
+<section id="discovery" class="wrap section scrollm">
+  <p class="eyebrow" style="margin-bottom:10px;">The turn</p>
+  <h2>The thing that finally clicked</h2>
+  <p>A friend who hosts a genuinely calm holiday — I'd always assumed she just didn't care as much — sent me a workbook she'd been using. She said one line that stuck: <em>"I plan the holiday six weeks out, twenty minutes a week, and I'm done thinking about it."</em></p>
+  <p>I was skeptical. I'd tried checklists. But this wasn't a checklist. It was a countdown system that built the plan <em>around my family</em> — my actual guest list, my actual kitchen, my actual budget — instead of some stranger's.</p>
+  <p>And here's the part that got me: it didn't just track tasks. It had check-in prompts that asked how I was actually doing, weeks before the day, so overwhelm got caught early instead of exploding in the pantry at midnight.</p>
+  <p>It's called <strong>The Holiday Hosting Reset</strong>. I printed it out, sat down with a coffee, and filled in the first page that same afternoon.</p>
+
+  <!-- INLINE PRODUCT MENTION -->
+  <div class="card" style="margin-top:12px;">
+    <p style="font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px!important;">Mentioned in this article</p>
+    <p style="font-weight:700;color:var(--heading);margin-bottom:2px!important;font-size:18px;">The Holiday Hosting Reset</p>
+    <p style="font-size:15px;color:#3a362b;margin-bottom:10px!important;">A 28-page fill-in workbook that plans your whole holiday gathering six weeks out — in about 20 minutes a week.</p>
+    <a href="#offer" style="color:var(--secondary);font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;">See the workbook
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8C8760" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="wrap section scrollm">
+  <p class="eyebrow" style="margin-bottom:10px;">Why it works</p>
+  <h2>How the system actually works</h2>
+  <p>The whole thing is organized by countdown weeks. You don't open it and face a wall of a hundred tasks. You open week six and do week six. That's it.</p>
+  <p>Each week gives you a small, specific slice — the budget sheets early, the guest and dietary trackers next, the room-by-room prep closer in, and a cooking timeline builder you fill with your own menu so the oven math stops living in your head.</p>
+  <p>Because it gets everything <em>out</em> of my head and onto paper, I could finally hand pieces off. "Here — this is the shopping list, this is the Tuesday to-do, can you take these two?" became a real sentence I could say, pointing at an actual page.</p>
+  <p>And the reflection prompts are the quiet genius of it. They catch burnout before it hits, instead of letting it ambush you two days out. It's reusable too — the trackers refill, so I'm not downloading a throwaway printable every November.</p>
+  <figure class="section">
+    <div class="imgbox">
+      <img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/newest-advertorial-ad/how-diagram_1790961441636.png" alt="A six-week countdown shown as a simple timeline">
+    </div>
+    <figcaption class="cap">The countdown structure: one small slice each week instead of one giant pile the night before.</figcaption>
+  </figure>
+</section>
+
+<!-- PRODUCT INTRO + FEATURE CARDS -->
+<section class="wrap section">
+  <p class="eyebrow" style="margin-bottom:10px;">What's inside</p>
+  <h2>What made it different for me</h2>
+  <p>I've bought planners before. What set this one apart was that it treated the emotional load as a real part of the plan — not just the logistics.</p>
+  <div class="features section">
+    <div class="card">
+      <span style="font-size:12px;font-weight:700;color:var(--secondary);letter-spacing:0.06em;">01 · PERSONAL</span>
+      <h3 style="margin:10px 0 8px;">Built around your table</h3>
+      <p style="margin:0!important;font-size:15px;">Your real guest list, your kitchen, your budget — not a stranger's holiday copied onto a form.</p>
+    </div>
+    <div class="card">
+      <span style="font-size:12px;font-weight:700;color:var(--secondary);letter-spacing:0.06em;">02 · HONEST</span>
+      <h3 style="margin:10px 0 8px;">Catches the overwhelm early</h3>
+      <p style="margin:0!important;font-size:15px;">Check-in prompts flag burnout weeks ahead, so it never ambushes you on the big day.</p>
+    </div>
+    <div class="card">
+      <span style="font-size:12px;font-weight:700;color:var(--secondary);letter-spacing:0.06em;">03 · REUSABLE</span>
+      <h3 style="margin:10px 0 8px;">Good every season</h3>
+      <p style="margin:0!important;font-size:15px;">Refillable trackers mean you fill it in again next holiday — not toss it and start over.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS TIMELINE -->
+<section id="results" class="wrap section scrollm">
+  <p class="eyebrow" style="margin-bottom:10px;">What changed</p>
+  <h2>Six weeks, step by step</h2>
+  <p>I kept notes, because I honestly didn't believe it would hold. It did. Here's roughly how my November went this time.</p>
+
+  <div style="position:relative;margin-top:28px;">
+    <div style="display:flex;gap:16px;padding-bottom:28px;align-items:flex-start;">
+      <span class="badge">1</span>
+      <div>
+        <h3 style="margin-bottom:6px;">Week 6 — twenty quiet minutes</h3>
+        <p style="margin:0!important;">I filled in the guest list and budget sheets with a coffee. For the first time, the whole thing was in front of me instead of swirling behind my eyes. I slept better that night.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;padding-bottom:28px;align-items:flex-start;">
+      <span class="badge">2</span>
+      <div>
+        <h3 style="margin-bottom:6px;">Week 4 — the dietary tracker saved me</h3>
+        <p style="margin:0!important;">Three allergies, one new vegetarian, one picky toddler — all on one page. A check-in prompt asked what I was dreading, and naming it out loud made it smaller.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;padding-bottom:28px;align-items:flex-start;">
+      <span class="badge">3</span>
+      <div>
+        <h3 style="margin-bottom:6px;">Week 2 — I actually delegated</h3>
+        <p style="margin:0!important;">Because the tasks were written down, I handed my husband a real list. He took the shopping and the table setup. No reminding, no managing. He just had the page.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;align-items:flex-start;">
+      <span class="badge">4</span>
+      <div>
+        <h3 style="margin-bottom:6px;">The day — I sat down and ate</h3>
+        <p style="margin:0!important;">The cooking timeline meant the oven math was already solved. At 4 p.m., instead of the bathroom floor, I was at my own table with a full plate and a glass of wine, present for the whole thing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="wrap section">
+  <p class="eyebrow" style="margin-bottom:10px;">The difference</p>
+  <h2>My old November vs. this one</h2>
+  <div style="overflow-x:auto;" class="card" >
+    <table class="ctable">
+      <thead>
+        <tr>
+          <th style="width:40%;">&nbsp;</th>
+          <th>The old way</th>
+          <th class="wincol">With the Reset</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="font-weight:600;">Where the plan lives</td><td>In my head, at midnight</td><td class="wincol">On paper, in front of us</td></tr>
+        <tr><td style="font-weight:600;">Delegating</td><td>Impossible — I had to think of it first</td><td class="wincol">Hand over an actual page</td></tr>
+        <tr><td style="font-weight:600;">Overwhelm</td><td>Hits two days before</td><td class="wincol">Caught weeks early</td></tr>
+        <tr><td style="font-weight:600;">Time each week</td><td>Scattered hours of worry</td><td class="wincol">About 20 focused minutes</td></tr>
+        <tr><td style="font-weight:600;">On the day</td><td>Surviving it</td><td class="wincol">Actually present for it</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- READER VOICES -->
+<section class="wrap section">
+  <p class="eyebrow" style="margin-bottom:10px;">Other readers</p>
+  <h2>What other moms told me after</h2>
+  <p>I shared this with a few friends and the group chat exploded. A handful said I could pass along what they wrote.</p>
+  <div class="voices section">
+    <div class="card">
+      <p style="margin-bottom:16px!important;">"The dietary tracker alone was worth it. I have a celiac nephew and I always forgot something until it was too late. This year, nothing slipped."</p>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="avatar"><img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/newest-advertorial-ad/v1_1790961441636.jpg" alt="Dana"></div>
+        <div style="font-size:14px;"><span style="font-weight:600;color:var(--heading);">Dana K.</span><br><span style="color:var(--muted);">3 weeks ago</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <p style="margin-bottom:16px!important;">"Honestly I almost didn't buy it — I have a drawer full of planners I never finished. But the week-by-week thing kept it small enough that I actually kept going. First time."</p>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="avatar"><img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/newest-advertorial-ad/v2_1790961441636.jpg" alt="Sabrina"></div>
+        <div style="font-size:14px;"><span style="font-weight:600;color:var(--heading);">Sabrina P.</span><br><span style="color:var(--muted);">1 month ago</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <p style="margin-bottom:16px!important;">"The check-in prompts made me realize I resented my husband way more than I thought. We had an actual talk because of it. He took over half of Christmas this year."</p>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="avatar"><img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/newest-advertorial-ad/v3_1790961441636.jpg" alt="Maricel"></div>
+        <div style="font-size:14px;"><span style="font-weight:600;color:var(--heading);">Maricel R.</span><br><span style="color:var(--muted);">2 weeks ago</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <p style="margin-bottom:16px!important;">"I filled in the cooking timeline the night before and slept like a baby for the first time in years. Knowing exactly what goes in the oven and when is weirdly life-changing."</p>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="avatar"><img src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/newest-advertorial-ad/v4_1790961441636.jpg" alt="Joan"></div>
+        <div style="font-size:14px;"><span style="font-weight:600;color:var(--heading);">Joan T.</span><br><span style="color:var(--muted);">5 weeks ago</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCT -->
+<section id="offer" class="wide section scrollm">
+  <div class="tint">
+    <div class="offer-grid">
+      <div class="offer-img">
+        <div style="aspect-ratio:1/1;overflow:hidden;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,0.14);">
+          <img style="width:100%;height:100%;object-fit:cover;display:block;" src="https://nyrslifytgbluamxpqzq.supabase.co/storage/v1/object/public/website-images/newest-advertorial-ad/product-sheets_1790961441636.png" alt="The Holiday Hosting Reset workbook, printed">
+        </div>
+      </div>
+      <div>
+        <p style="font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--heading);font-weight:700;margin-bottom:8px!important;">Featured in this article</p>
+        <h2 style="margin-bottom:10px!important;">The Holiday Hosting Reset</h2>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">
+          <span style="display:inline-flex;gap:2px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#8C8760"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#8C8760"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#8C8760"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#8C8760"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#8C8760"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg>
+          </span>
+          <span style="font-size:14px;color:var(--heading);font-weight:600;">Loved by holiday hosts</span>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;">
+          <span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><span style="font-weight:700;color:var(--heading);">Plan in 20 minutes a week</span><br><span style="font-size:15px;color:#3a362b;">A six-week countdown so it never piles up the night before.</span></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;">
+          <span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><span style="font-weight:700;color:var(--heading);">Everything out of your head</span><br><span style="font-size:15px;color:#3a362b;">Budget, guests, dietary needs, prep and cooking — all on paper you can hand off.</span></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:18px;">
+          <span class="chk"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div><span style="font-weight:700;color:var(--heading);">Catches burnout early</span><br><span style="font-size:15px;color:#3a362b;">Reflection prompts flag overwhelm weeks before the big day.</span></div>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;">
+          <span class="chip">Interactive workbook</span>
+          <span class="chip">28 pages</span>
+          <span class="chip">For holiday hosts</span>
+        </div>
+
+        <a href="#loupa-buy" class="btn" style="width:100%;">View the workbook
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <p style="text-align:center;font-size:13px;color:#5a543f;margin:12px 0 0!important;">The price and all details are on the product page.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="wrap section">
+  <p class="eyebrow" style="margin-bottom:10px;">Before you ask</p>
+  <h2>Questions I had too</h2>
+  <div class="card" style="padding:4px 20px;margin-top:14px;">
+    <div>
+      <button class="faq-q" onclick="toggleFaq(this)">Will this work if my holiday is chaos every year?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A2417" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">That's exactly who it's built for. Because the plan is built around your real guest list, kitchen and budget, it fits a chaotic twenty-person dinner just as well as a quiet eight.</div>
+    </div>
+    <hr class="hair">
+    <div>
+      <button class="faq-q" onclick="toggleFaq(this)">I never finish planners. Why would I finish this?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A2417" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">Because it never asks for more than about 20 minutes at a time. You do one week, close it, and come back next week. The countdown structure is what keeps it small enough to actually keep up with.</div>
+    </div>
+    <hr class="hair">
+    <div>
+      <button class="faq-q" onclick="toggleFaq(this)">Is it only for Thanksgiving?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A2417" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">No — it works for Christmas or any major holiday gathering. And the trackers are refillable, so you reuse the same workbook every season instead of starting from scratch.</div>
+    </div>
+    <hr class="hair">
+    <div>
+      <button class="faq-q" onclick="toggleFaq(this)">Can I actually get my family to help with it?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A2417" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">This was the biggest shift for me. Once the tasks are written on a page, you can hand someone a concrete list instead of trying to explain the whole thing from memory. The mental load becomes shareable.</div>
+    </div>
+    <hr class="hair">
+    <div>
+      <button class="faq-q" onclick="toggleFaq(this)">How do I use it — do I print it?<svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A2417" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">It's a 28-page fill-in workbook you can print and write on by hand. You work through it week by week, filling in the trackers, timelines and check-ins as you go.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section" style="background:var(--primary);padding:56px 20px;text-align:center;margin-top:64px;">
+  <div style="max-width:620px;margin:0 auto;">
+    <h2 style="margin-bottom:14px!important;">This year, be at your own table</h2>
+    <p style="color:#3a362b;margin-bottom:26px!important;">Plan the whole gathering six weeks out, twenty minutes a week — and actually sit down to enjoy the day you built.</p>
+    <a href="#offer" class="btn">View the workbook
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="wrap" style="margin-top:56px;padding-bottom:40px;">
+  <hr class="hair" style="margin-bottom:24px;">
+  <p style="font-weight:700;color:var(--heading);margin-bottom:8px!important;">The Holiday Hosting Reset</p>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:10px!important;">This article is a personal account and reflects one host's experience. Individual results vary depending on your own holiday, household and planning habits. It is intended as practical planning support, not professional advice.</p>
+  <p style="font-size:13px;color:var(--muted);margin:0!important;">© 2024 The Holiday Hosting Reset. All rights reserved.</p>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky">
+  <div class="wide" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:12px;padding-bottom:12px;">
+    <div style="min-width:0;">
+      <p style="font-weight:700;color:var(--heading);margin:0 0 2px!important;font-size:15px;line-height:1.2;">The Holiday Hosting Reset</p>
+      <p style="margin:0!important;font-size:13px;color:var(--muted);line-height:1.2;">Plan it all in 20 minutes a week</p>
+    </div>
+    <a href="#offer" class="btn" style="padding:13px 22px;font-size:15px;white-space:nowrap;box-shadow:none;">View the workbook</a>
+  </div>
+</div>
+
+<script>
+  function toggleFaq(btn){
+    var a = btn.nextElementSibling;
+    var c = btn.querySelector('.chev');
+    var open = a.classList.contains('open');
+    a.classList.toggle('open', !open);
+    c.classList.toggle('open', !open);
+  }
+  (function(){
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var els = document.querySelectorAll('.section');
+    els.forEach(function(e){ e.classList.add('reveal'); });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.08});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+</script>
+<script data-loupa-contrast>(function(){
+var H="#2A2417",W="#FFFFFF",T=0.4;
+function p(v){var m=v&&v.match(/rgba?\(([\d.]+)[ ,]+([\d.]+)[ ,]+([\d.]+)(?:\s*[,/]\s*([\d.]+))?/);return m?{c:[+m[1],+m[2],+m[3]],a:m[4]===undefined?1:+m[4]}:null}
+function h(x){x=x.replace('#','');return[0,2,4].map(function(i){return parseInt(x.substr(i,2),16)})}
+function lu(c){return c.map(function(x){x/=255;return x<=0.03928?x/12.92:Math.pow((x+0.055)/1.055,2.4)}).reduce(function(s,x,i){return s+x*[0.2126,0.7152,0.0722][i]},0)}
+function cr(a,b){var x=lu(a),y=lu(b);return(Math.max(x,y)+0.05)/(Math.min(x,y)+0.05)}
+function media(el){return /^(IMG|VIDEO|CANVAS|PICTURE|IFRAME)$/.test(el.tagName)||getComputedStyle(el).backgroundImage!=='none'}
+function bgOf(el){for(var n=el;n&&n.nodeType===1;n=n.parentElement){var s=getComputedStyle(n);if(s.backgroundImage!=='none')return null;var b=p(s.backgroundColor);if(b&&b.a>0){return b.a<1?null:{c:b.c,el:n}}}return{c:[255,255,255],el:document.documentElement}}
+function covered(el,bgEl){var r=el.getBoundingClientRect();if(!r.width||!r.height)return true;var x=r.left+r.width/2,y=r.top+r.height/2;if(x<0||y<0||x>innerWidth||y>innerHeight)return false;var st=document.elementsFromPoint(x,y);for(var i=0;i<st.length;i++){var n=st[i];if(n===bgEl)return false;if(n===el||el.contains(n)||n.contains(el))continue;if(media(n))return true;var b=p(getComputedStyle(n).backgroundColor);if(b&&b.a>0)return true}return false}
+function run(){var all=document.body?document.body.querySelectorAll('*'):[];for(var i=0;i<all.length;i++){var el=all[i];if(el.closest('svg,script,style,noscript,#loupa-consent-root'))continue;var t=false;for(var k=el.firstChild;k;k=k.nextSibling)if(k.nodeType===3&&k.nodeValue.trim()){t=true;break}if(!t)continue;var s=getComputedStyle(el),f=p(s.color);if(!f||f.a<1)continue;var bg=bgOf(el);if(!bg||covered(el,bg.el))continue;var fs=parseFloat(s.fontSize)||16,big=fs>=24||(fs>=18.66&&+s.fontWeight>=700),min=big?3:4.5,dark=lu(bg.c)<T,fl=lu(f.c)>=T,ok=cr(f.c,bg.c)>=min;
+if(dark?(fl&&ok):(!fl&&ok))continue;var to=dark?W:H;el.style.setProperty('color',to,'important');el.setAttribute('data-loupa-contrast-fixed','1')}}
+function go(){try{run()}catch(e){}}
+if(document.readyState==='complete')go();else addEventListener('load',go);setTimeout(go,1500);
+})();</script>
+<!-- LOUPA_EDITORIAL_RUNTIME_START -->
+<script data-loupa-editorial>
+(function(){
+  var SITE="b00a39c7-1194-4d7b-b4d2-7dca46807983";
+  var ENDPOINT="https://nyrslifytgbluamxpqzq.supabase.co/functions/v1/track-website-event";
+  var DESTINATION="";
+  var KEY='loupa_vid';
+  function uid(){try{return crypto.randomUUID()}catch(e){return 'v-'+Math.random().toString(36).slice(2)+Date.now().toString(36)}}
+  function id(storage,key){try{var v=storage.getItem(key);if(!v){v=uid();storage.setItem(key,v)}return v}catch(e){return uid()}}
+  var vid=id(localStorage,KEY),sid=id(sessionStorage,KEY+'_s');
+  function send(event){
+    var body=JSON.stringify({website_id:SITE,event:event,visitor_id:vid,session_id:sid,path:location.pathname+location.search,referrer:document.referrer||null});
+    try{if(navigator.sendBeacon&&navigator.sendBeacon(ENDPOINT,new Blob([body],{type:'text/plain;charset=UTF-8'})))return}catch(e){}
+    try{fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:body,keepalive:true})}catch(e){}
+  }
+  function start(){send('page_view')}
+  if(window.LoupaConsent)window.LoupaConsent.on('analytics',start);else start();
+  document.addEventListener('click',function(ev){
+    var el=ev.target&&ev.target.closest?ev.target.closest('a,button'):null;if(!el)return;
+    if(el.closest('#loupa-cc,#loupa-cc-overlay,footer,[data-loupa-ignore]'))return;
+    var href=(el.getAttribute('href')||'').trim();
+    if(el.tagName==='A'&&href!=='#loupa-buy'&&/^(#|mailto:|tel:|javascript:)/i.test(href))return;
+    if(el.tagName==='BUTTON'&&el.type==='submit'&&el.form)return;
+    ev.preventDefault();
+    if(!DESTINATION)return;
+    send('product_click');
+    window.location.assign(DESTINATION);
+  },true);
+})();
+</script>
+<!-- LOUPA_EDITORIAL_RUNTIME_END -->
+<footer data-loupa-cc-footer style="text-align:center;padding:16px;font-size:13px"><button type="button" data-loupa-cookie-settings>Cookie Settings</button></footer></body>
+</html>
